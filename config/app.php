@@ -3,6 +3,16 @@
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
 
+
+/**
+ * @OA\Info(
+ *     title="My Laravel API",
+ *     description="This is a simple Laravel API that returns the status of the database.",
+ *     version="1.0.0"
+ * )
+ */
+
+ 
 return [
 
     /*

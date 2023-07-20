@@ -21,6 +21,11 @@ COPY . .
 
 RUN composer install --no-interaction
 
+RUN composer require "darkaonline/l5-swagger:~8.0"
+
 RUN chown -R www-data:www-data /var/www/html
 
+
 CMD php artisan serve --host=0.0.0.0 --port=8000
+
+# CMD php artisan vendor:publish --provider "L5Swagger\L5SwaggerServiceProvider"
