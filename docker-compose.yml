@@ -1,0 +1,27 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: pfm
+    restart: unless-stopped
+    working_dir: /var/www/html
+    ports:
+      - 1021:8000
+    volumes:
+      - .:/var/www/html
+    networks:
+      - laravel
+
+  db:
+    image: mariadb
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: laravel
+      MYSQL_ROOT_PASSWORD: SuperSecret
+    networks:
+      - laravel
+networks:
+  laravel:
+    driver: bridge
