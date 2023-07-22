@@ -6,11 +6,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 
-class TestDbController extends Controller
+class CheckDatabaseController extends Controller
 {
 /**
  * @OA\Get(
- *     path="/api/dbStat",
+ *     path="/api/CheckDatabase",
  *     @OA\Response(response="200", description="An example endpoint")
  * )
  */

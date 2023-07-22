@@ -21,7 +21,13 @@ COPY . .
 
 RUN composer install --no-interaction
 
-RUN composer require "darkaonline/l5-swagger:~8.0"
+# RUN composer require "darkaonline/l5-swagger:~8.0"
+
+# Debugger
+
+# RUN pecl install xdebug \
+#     && docker-php-ext-enable xdebug
+
 
 RUN chown -R www-data:www-data /var/www/html
 
