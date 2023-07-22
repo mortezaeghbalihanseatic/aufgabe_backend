@@ -10,20 +10,42 @@ services:
     working_dir: /var/www/html
     ports:
       - 1021:8000
+      # - 9000:9000
     volumes:
       - .:/var/www/html
     networks:
       - laravel
-
+    # environment:
+    #   XDEBUG_CONFIG: "remote_enable=1 remote_host=host.docker.internal remote_port=9000"
+    # stdin_open: true
+    # tty: true
+    
   db:
     image: mariadb
     restart: unless-stopped
     container_name: database
+    ports:
+      - 3306:3306   #for debug on device
     environment:
       MYSQL_DATABASE: laravel
       MYSQL_ROOT_PASSWORD: SuperSecret
     networks:
       - laravel
+
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    links:
+      - db
+    ports:
+      - 8081:80
+    environment:
+      - PMA_HOST=db
+    networks:
+      - laravel
+
 networks:
   laravel:
     driver: bridge

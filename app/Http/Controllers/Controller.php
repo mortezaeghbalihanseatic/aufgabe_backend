@@ -8,7 +8,7 @@ use Illuminate\Routing\Controller as BaseController;
 
 
 /**
- * @OA\Info(title="My First API", version="0.1")
+ * @OA\Info(title="Hanseatic Bank Aufgabe API", version="0.1")
  */
 
 class Controller extends BaseController

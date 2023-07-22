@@ -1,10 +1,9 @@
 <?php
 
+use App\Http\Controllers\CheckDatabaseController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TestDbController;
-
-
+use App\Http\Controllers\AuthController;
 
 
 /*
@@ -23,14 +22,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::get('/dbStat', [TestDbController::class, 'index']);
+Route::get('/CheckDatabase', [CheckDatabaseController::class, 'index']);
+
+Route::post('/register', [AuthController::class, 'register']) ;
+
+Route::post('/login', [AuthController::class, 'login']) ;
 
 
-Route::get('/inf', function () {
-  $infos = [
-    'base_path' => base_path('app'),
-  ];
-  return response()->json($infos);
+Route::middleware('auth:sanctum')->group(function () {
+  // Your protected API routes here
 });
-
-
