@@ -29,8 +29,8 @@ class QuoteController extends Controller
      *         )
      *     ),
      *     @OA\Response(
-     *         response=500,
-     *         description="Internal Server Error",
+     *         response=401,
+     *         description="Unauthorized",
      *     )
      * )
      */

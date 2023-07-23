@@ -178,8 +178,8 @@
                             }
                         }
                     },
-                    "500": {
-                        "description": "Internal Server Error"
+                    "401": {
+                        "description": "Unauthorized"
                     }
                 },
                 "security": [
