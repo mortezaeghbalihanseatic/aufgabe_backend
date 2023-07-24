@@ -156,10 +156,76 @@
                 }
             }
         },
+        "/api/quote": {
+            "get": {
+                "tags": [
+                    "Quotes Model 2"
+                ],
+                "summary": "Get and save 1 quote from The Simpsons Quote API",
+                "description": "Retrieves quote from an external API and saves it to the database.",
+                "operationId": "96b6d6161df2a411e17a8f14230d8dcb",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Quote"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/otherquotes": {
+            "get": {
+                "tags": [
+                    "Quotes Model 2"
+                ],
+                "summary": "Get and save quotes from The Simpsons Quote API",
+                "description": "Retrieves quotes from an external API and saves them to the database.",
+                "operationId": "2c8eb09699fd8780c5f0feee70ac9f9b",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Quote"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
         "/api/quotes": {
             "get": {
                 "tags": [
-                    "Quotes"
+                    "Quotes Model 1"
                 ],
                 "summary": "Get and save quotes from The Simpsons Quote API",
                 "description": "Retrieves quotes from an external API and saves them to the database.",

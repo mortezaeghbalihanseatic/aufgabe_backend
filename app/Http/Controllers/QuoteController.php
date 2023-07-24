@@ -18,7 +18,7 @@ class QuoteController extends Controller
      *     path="/api/quotes",
      *     summary="Get and save quotes from The Simpsons Quote API",
      *     description="Retrieves quotes from an external API and saves them to the database.",
-     *     tags={"Quotes"},
+     *     tags={"Quotes Model 1"},
      *     security={{"bearerAuth": {}}},
      *     @OA\Response(
      *         response=200,
