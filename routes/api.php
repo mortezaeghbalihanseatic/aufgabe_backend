@@ -4,6 +4,7 @@ use App\Http\Controllers\CheckDatabaseController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\QuoteController;
 
 
 /*
@@ -29,6 +30,7 @@ Route::post('/register', [AuthController::class, 'register']) ;
 Route::post('/login', [AuthController::class, 'login']) ;
 
 
+
 Route::middleware('auth:sanctum')->group(function () {
-  // Your protected API routes here
+  Route::get('/quotes', [QuoteController::class, 'getAndSaveQuotes']);
 });

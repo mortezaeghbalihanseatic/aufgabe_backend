@@ -155,10 +155,60 @@
                     }
                 }
             }
+        },
+        "/api/quotes": {
+            "get": {
+                "tags": [
+                    "Quotes"
+                ],
+                "summary": "Get and save quotes from The Simpsons Quote API",
+                "description": "Retrieves quotes from an external API and saves them to the database.",
+                "operationId": "b6b2b422e1b4939737885f875ea092ff",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Quote"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
         }
     },
     "components": {
         "schemas": {
+            "Quote": {
+                "properties": {
+                    "quote": {
+                        "description": "The quote text.",
+                        "type": "string"
+                    },
+                    "character": {
+                        "description": "The name of the character who said the quote.",
+                        "type": "string"
+                    },
+                    "image_url": {
+                        "description": "The URL of an image related to the quote (if available).",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
             "User": {
                 "properties": {
                     "username": {
@@ -171,6 +221,12 @@
                     }
                 },
                 "type": "object"
+            }
+        },
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer"
             }
         }
     }

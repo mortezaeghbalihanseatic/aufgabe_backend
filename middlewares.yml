@@ -1,0 +1,6 @@
+http:
+  middlewares:
+    strip-phpmyadmin-prefix:
+      stripPrefix:
+        prefixes:
+          - /phpmyadmin
