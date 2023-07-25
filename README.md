@@ -9,15 +9,14 @@ This is my Aufgabe
 - [frontend](https://github.com/mortezaeghbalihanseatic/aufgabe_frontend).
 
 
-I have some problem in Security. I will do that 
+I have some problem in Security. I will do that. 
 
 ### Demo and Links
 
 - **[swagger](http://64.226.101.10/api/docs)**
 - **[demo](http://64.226.101.10/)**
 
-ies will be promptly addressed.
-
+please see tn unsafe mode until I solve it.
 ## License
 
 This project is licensed under the [MIT license](https://opensource.org/licenses/MIT).
