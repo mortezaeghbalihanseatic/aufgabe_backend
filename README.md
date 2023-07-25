@@ -15,7 +15,7 @@ This is my Aufgabe
 - **[swagger](http://139.59.147.23/api/docs)**
 - **[demo](http://139.59.147.23/)**
 
-*Note: The problem of the [last server](http://64.226.101.10/) was Ip address, I run it in a new server and the problem solved!*
+*Note: The problem of the [old server](http://64.226.101.10/) was Ip address, I run it in a new server and the problem solved!*
 
 ## License
 
