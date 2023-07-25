@@ -16,7 +16,7 @@ I have some problem in Security. I will do that.
 - **[swagger](http://64.226.101.10/api/docs)**
 - **[demo](http://64.226.101.10/)**
 
-please see tn unsafe mode until I solve it.
+please see it in unsafe mode until I solve it.
 ## License
 
 This project is licensed under the [MIT license](https://opensource.org/licenses/MIT).
