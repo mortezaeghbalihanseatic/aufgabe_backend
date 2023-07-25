@@ -1,10 +1,10 @@
 version: '3'
 services:
-  app:
+  backend:
     build:
       context: .
       dockerfile: Dockerfile
-    image: pfm
+    image: aufgabebackend
     container_name: pfm
     restart: unless-stopped
     working_dir: /var/www/html
@@ -17,7 +17,7 @@ services:
       - traefik-public  
     labels:
       - traefik.enable=true
-      - traefik.http.routers.app.rule=PathPrefix(`/api`)  || PathPrefix(`/docs`) 
+      - traefik.http.routers.backend.rule=PathPrefix(`/api`)  || PathPrefix(`/docs`) 
       - traefik.http.services.home.loadbalancer.server.port=8000
     depends_on:
       - traefik
@@ -27,7 +27,21 @@ services:
     # stdin_open: true
     # tty: true
   
-  
+  frontend:
+    image: aufgabefrontend:latest
+    container_name: frontend
+    restart: always
+    links:
+      - backend
+    depends_on:
+      - traefik
+    networks:
+      - traefik-public  
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.frontend.rule=PathPrefix(`/`) && !PathPrefix(`/api`) && !PathPrefix(`/docs`)
+      - traefik.http.services.frontend.loadbalancer.server.port=3000
+    
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: phpmyadmin
