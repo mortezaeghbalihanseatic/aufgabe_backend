@@ -10,12 +10,10 @@ This is my Aufgabe
 - [traefik](https://github.com/traefik/traefik)
 
 
-I have some problem in Security. I will do that. 
-
 ### Demo and Links
 
-- **[swagger](http://64.226.101.10/api/docs)**
-- **[demo](http://64.226.101.10/)**
+- **[swagger](http://139.59.147.23/api/docs)**
+- **[demo](http://139.59.147.23/)**
 
 please see it in unsafe mode until I solve it.
 ## License
